@@ -6,22 +6,31 @@ This project builds and evaluates machine learning models to predict whether a p
 
 ## 📊 Project Overview
 
+Diabetes significantly impacts hospitalization rates and emergency department visits in the United States. Early identification of at-risk patients can improve patient outcomes and reduce unnecessary healthcare costs.
 The goal of this project is to accurately predict the presence of diabetes using patient health metrics, such as glucose levels, BMI, blood pressure, and more.
 
-### Dataset
-- **Source:** Pima Indians Diabetes Dataset
-- **Rows:** 768 observations
-- **Features:**
-  - Pregnancies
-  - Glucose
-  - Blood Pressure
-  - Skin Thickness
-  - Insulin
-  - BMI
-  - Diabetes Pedigree Function
-  - Age
-  - Outcome (Target Variable)
+### Business Value
+- Improve diagnostic accuracy.
+- Reduce missed diabetes cases.
+- Enhance preventative healthcare.
 
+## 📂 Dataset
+
+- **Source:** Behavioral Risk Factor Surveillance System (BRFSS) survey  
+- **Collected by:** CDC  
+- **Year:** 2015  
+- **Size:** ~69,000 survey responses
+
+### Key Features
+- High Blood Pressure  
+- Cholesterol Level  
+- BMI  
+- General Health Rating  
+- Age Group  
+- Education Level  
+- Income Level  
+- Mental and Physical Health Days
+  
 ---
 
 ## 🔎 Key Steps
@@ -29,18 +38,29 @@ The goal of this project is to accurately predict the presence of diabetes using
 ### 1. Data Cleaning & Preprocessing
 - Replaced zero values in non-logical features (like glucose and BMI) with the feature’s median.
 - Standardized features for all models to ensure fair comparisons.
+- Mapped outliers to bins for BMI, mental health, physical health, age, education, and income.
 
 ### 2. Exploratory Data Analysis
 - Checked class imbalance: ~65% non-diabetic, ~35% diabetic.
-- Visualized feature distributions and correlations.
+- Visualized feature distributions.
+- Identified strong correlations with high blood pressure, cholesterol, and BMI.
 
 ### 3. Model Training
-Tested the following classifiers:
-- **Logistic Regression**
-- **K-Nearest Neighbors (KNN)**
-- **Random Forest**
-- **Decision Tree**
-- **Naïve Bayes**
+
+### Models Tested
+- Logistic Regression
+- K-Nearest Neighbors
+- Decision Trees
+- Random Forest
+- Gradient Boosting
+- XGBoost
+
+### Final Model
+- **Best Model:** Gradient Boosting
+- **Performance:**
+  - F1-Score: **0.7734**
+  - Recall: **0.8041**
+  - Precision: ~74%
 
 ### 4. Model Evaluation
 - **Metrics:** Accuracy, Precision, Recall, F1-Score, ROC-AUC
