@@ -92,7 +92,7 @@ The goal of this project is to accurately predict the presence of diabetes using
 - Paul Pham
 - Michelle Zhu
 - Iris Huang
-- 
+  
 ---
 
 ## ✅ Next Steps (Future Improvements)
